@@ -56,3 +56,33 @@ export const zoomAppear = {
         })
     }
 }
+
+export const flipOut = {
+    enter: (el, done)=> {
+        var delay = el.getAttribute("delay") ?? 0
+        anime({
+            targets: el,
+            opacity: [0, 1],
+            rotateX: [ 180, 0],
+            delay: +delay,
+            position: "absolute",
+            easing: 'cubicBezier(.17,.67,.54,1.24)',
+            duration: 1000,
+            complete: done
+        })
+    },
+    leave: (el, done)=> {
+        var delay = el.getAttribute("delay") ?? 0
+        anime({
+            targets: el,
+            opacity: [0, 1],
+            rotateX: [ 180, 0],
+            delay: +delay,
+            position: "absolute",
+            duration: 400,
+            direction: "reverse",
+            easing: 'cubicBezier(.17,.67,.54,1.24)',
+            complete: done
+        })
+    }
+}

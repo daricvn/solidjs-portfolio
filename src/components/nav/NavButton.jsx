@@ -24,7 +24,7 @@ export default function NavButtons(props){
     }
 
     const updateIndicator = (target)=>{
-        if (!indicator)
+        if (!indicator || !target)
             return
         const rect = target.getBoundingClientRect()
         const parentRect = target.parentNode.getBoundingClientRect()

@@ -1,5 +1,6 @@
 import { createSignal } from "solid-js";
 import TextFragment from "../components/contents/TextFragment";
+import Construction from "./Construction";
 import Section from "./Section";
 
 const title = "My Works"
@@ -19,9 +20,7 @@ export default function Works(){
             <div className="flex-grow pt-8">
                 {
                     getShow() &&
-                    <div className="text-center text-black block text-5xl">
-                        This page is under construction... <br /><span className="bg-black px-2 text-white mt-6 inline-block">Please comeback later.</span>
-                    </div>
+                    <Construction />
                 }
             </div>
         </div>
