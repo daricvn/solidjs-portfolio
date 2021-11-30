@@ -58,7 +58,7 @@ export default function FlipBox(props){
         }))
     }
 
-    return <div ref={mainRef} delay={props.delay} className={`block relative select-none cursor-pointer`} onMouseMove={handleMouseMoveEffect}
+    return <div ref={mainRef} delay={props.delay} className={`inline-block relative select-none cursor-pointer`} onMouseMove={handleMouseMoveEffect}
         onMouseLeave={handleMouseLeave} 
         onMouseDown={handleMouseDown}
         onClick={props.onClick}

@@ -4,7 +4,7 @@ import SideBox from "../components/contents/SideBox"
 const technologies = [
     { a: "C#", desc: "CSharp", frontClass: "bg-white text-black font-bold", backClass: "text-white font-bold border-4 border-white", loc: 0 },
     { icon: "fab fa-react", desc: "ReactJS", frontClass: "bg-white text-black text-3xl", backClass: "text-white font-bold border-4 border-white", loc: 2 },
-    { icon: "fab fa-node-js", desc: "NodeJS", frontClass: "bg-white text-black text-3xl", backClass: "text-white font-bold border-4 border-white", loc: 4 },
+    { icon: "fab fa-microsoft", desc: "Azure", frontClass: "bg-white text-black text-3xl", backClass: "text-white font-bold border-4 border-white", loc: 4 },
     { icon: "fab fa-css3", desc: "CSS", frontClass: "bg-white text-black", backClass: "text-white font-bold border-4 border-white", loc: 6 },
     { icon: "fab fa-vuejs", desc: "VueJS", frontClass: "bg-white text-black", backClass: "text-white font-bold border-4 border-white", loc: 8 },
 ]

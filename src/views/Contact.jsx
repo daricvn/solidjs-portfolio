@@ -54,11 +54,11 @@ export default function Contact(){
                                     Feel free to send me a message via
                                 </div>}
                         </Transition>
-                        <div className="pt-4">
+                        <div className="pt-4 grid grid-cols-1 w-64 md:w-72 lg:w-96">
                             <For each={contactList}>
                                 {
                                     (contact, i)=> <Transition onEnter={flipOut.enter} onExit={flipOut.leave} appear>
-                                            <FlipBox className="h-16 w-64 md:w-72 lg:w-96 bg-white text-black py-4 px-4 mt-1" delay={1000 + i() * 500}
+                                            <FlipBox className="h-16 w-full bg-white text-black py-4 px-4 mt-1" delay={1000 + i() * 500}
                                                 onClick={()=> openLink(contact.url)}>
                                                 <i className={contact.icon}></i>
                                                 <span className="ml-3 text-xl">{contact.desc}</span>

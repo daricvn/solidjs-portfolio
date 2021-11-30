@@ -6,6 +6,12 @@ export default function NavButtons(props){
     const [ state, setState ] = useGlobalState()
     let indicator
 
+    onMount(()=>{
+        setTimeout(()=>{
+            refreshIndicator()
+        }, 2000)
+    })
+
     createEffect(()=>{
         if (state.size.width || state.currentRef != null)
             refreshIndicator()
