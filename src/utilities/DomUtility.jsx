@@ -13,8 +13,11 @@ export const DomUtility = {
         let rect = el.getBoundingClientRect()
         if (!DomUtility.__registeredOnScroll){
             window.addEventListener("scroll",()=>{
-                if (DomUtility.isScrolling && Math.abs(window.scrollY - DomUtility.__scrollToOffset) <= 3)
+                if (DomUtility.isScrolling && Math.abs(window.scrollY - DomUtility.__scrollToOffset) <= 3){
                     DomUtility.isScrolling = false
+                    if (DomUtility.__scrollTrack)
+                        clearTimeout(DomUtility.__scrollTrack)
+                }
             })
             DomUtility.__registeredOnScroll = true
         }
@@ -25,9 +28,20 @@ export const DomUtility = {
             left: 0,
             behavior: "smooth"
         })
+        DomUtility._trackScroll();
     },
     isScrolling: false,
     __scrollToOffset: 0,
-    __registeredOnScroll: false
+    __registeredOnScroll: false,
+    __scrollTrack: 0,
+    _trackScroll: ()=>{
+        if (DomUtility.__scrollTrack)
+            clearTimeout(DomUtility.__scrollTrack)
+        DomUtility.__scrollTrack = setTimeout(()=> 
+        {   
+            DomUtility.isScrolling = false;
+            DomUtility.__scrollTrack = 0
+        }, 2000);
+    }
 }
 

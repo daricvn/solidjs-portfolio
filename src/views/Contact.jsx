@@ -72,9 +72,9 @@ export default function Contact(){
             </div>
         </div>
         <div className="block bg-white bg-opacity-80 h-16 text-black py-4 pointer-events-none select-none; z-10">
-            <div className="pr-8" style="float: right">
-                Made with <img src={solidLogo} alt="Solid Logo" className="h-8 inline-block" />
-                and <img src={tailwindLogo} alt="TailwindCSS Logo" className="ml-2 h-5 inline-block" />
+            <div className="pr-8 text-sm md:text-base" style="float: right">
+                Made with <img src={solidLogo} alt="Solid Logo" className="h-4 md:h-7 inline-block" />
+                and <img src={tailwindLogo} alt="TailwindCSS Logo" className="ml-2 h-3 md:h-5 inline-block" />
             </div>
         </div>
     </Section>
