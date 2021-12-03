@@ -1,0 +1,91 @@
+.expand-box {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 1px;
+    margin-right: 1px;
+}
+
+.expand-box > .icon {
+    height: 180px;
+    width: 180px;
+    font-size: 107pt;
+    padding-left: 74px;
+}
+
+.expand-box > .content {
+    position: absolute;
+    top: 0;
+    left: 180px;
+    height: 180px;
+    width: 360px;
+    padding-left: 18px;
+    padding-top: 9px;
+}
+
+.expand-box > .content > .desc {
+    font-size: 12pt;
+}
+
+.expand-box:hover {
+    width: 540px;
+}
+
+@media (max-width: 1024px) {
+    .expand-box {
+        width: 156px;
+        height: 156px;
+    }
+    
+    .expand-box > .icon {
+        height: 156px;
+        width: 156px;
+        font-size: 86pt;
+        padding-left: 58px;
+    }
+    
+    .expand-box > .content {
+        left: 156px;
+        height: 156px;
+        width: 312px;
+        padding-left: 16px;
+        padding-top: 9px;
+    }
+    
+    .expand-box:hover {
+        width: 468px;
+    }
+    
+    .expand-box > .content > .desc {
+        font-size: 10.2pt;
+    }
+}
+
+@media (max-width: 768px) {
+    .expand-box {
+        width: 136px;
+        height: 136px;
+    }
+    
+    .expand-box > .icon {
+        height: 136px;
+        width: 136px;
+        font-size: 82pt;
+        padding-left: 54px;
+    }
+    
+    .expand-box > .content {
+        left: 136px;
+        height: 136px;
+        width: 272px;
+        padding-left: 14px;
+        padding-top: 9px;
+    }
+    
+    .expand-box:hover {
+        width: 408px;
+    }
+    
+    .expand-box > .content > .desc {
+        font-size: 9.3pt;
+    }
+}

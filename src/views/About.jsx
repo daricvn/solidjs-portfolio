@@ -25,7 +25,7 @@ export default function About(props){
                 </div>
                 <div className="flex-grow flex flex-col pt-8 h-full z-10 container mx-auto">
                     <div className="pb-12">
-                        <TextFragment className="text-4xl select-none" show={getShow()} value={title} />
+                        <TextFragment className="text-4xl lg:text-6xl select-none" show={getShow()} value={title} />
                     </div>
                     <div className="flex-auto px-2 flex flex-col">
                         <div className="grid grid-cols-1 flex-grow lg:grid-cols-2">

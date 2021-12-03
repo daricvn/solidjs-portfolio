@@ -41,7 +41,7 @@ export default function Contact(){
                 </div>
         <div className="flex-grow flex flex-col pt-8 h-full z-10 container mx-auto">
             <div className="pb-12">
-                <TextFragment className="text-4xl select-none pl-4" show={getShow()} value={title} />
+                <TextFragment className="text-4xl lg:text-6xl select-none pl-4" show={getShow()} value={title} />
             </div>
             <div className="flex-grow pt-8 pl-4">
                 {

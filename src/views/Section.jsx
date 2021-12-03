@@ -10,11 +10,11 @@ export default function Section(props){
     createEffect(()=>{
         if (!mainRef || props.id == null || state.scrollY < 0 || DomUtility.isScrolling)
             return
-        const shouldShow = DomUtility.getViewPortRate(mainRef) > 0.62 || state.currentRef == props.id;
+        const shouldShow = DomUtility.getViewPortRate(mainRef) > 0.52 || state.currentRef == props.id;
         if (shouldShow != getShow() && props.onChange)
             props.onChange(mainRef, shouldShow)
         setShow(shouldShow)
-        if (DomUtility.getViewPortRate(mainRef) > 0.63 && state.currentRef != props.id){
+        if (DomUtility.getViewPortRate(mainRef) > 0.53 && state.currentRef != props.id){
             setState("currentRef", ()=> props.id)
         }
     })

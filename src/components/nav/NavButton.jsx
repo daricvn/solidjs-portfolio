@@ -9,7 +9,7 @@ export default function NavButtons(props){
     onMount(()=>{
         setTimeout(()=>{
             refreshIndicator()
-        }, 1000)
+        }, 300)
     })
 
     createEffect(()=>{

@@ -57,6 +57,37 @@ export const zoomAppear = {
     }
 }
 
+export const zoomOut = {
+    enter: (el, done)=> {
+        var delay = el.getAttribute("delay") ?? 0
+        anime({
+            targets: el,
+            opacity: [0, 1],
+            scale: [ 0, 1],
+            delay: +delay,
+            position: "absolute",
+            duration: 600,
+            pointerEvents: "none",
+            easing: 'cubicBezier(.17,.67,.78,1.19)',
+            complete: done
+        })
+    },
+    leave: (el, done)=> {
+        var delay = el.getAttribute("delay") ?? 0
+        anime({
+            targets: el,
+            opacity: [0, 1],
+            scale: [ 0.3, 1],
+            delay: +delay,
+            duration: 300,
+            position: "absolute",
+            easing: 'cubicBezier(.5, .05, .1, .3)',
+            direction: "reverse",
+            complete: done
+        })
+    }
+}
+
 export const flipOut = {
     enter: (el, done)=> {
         var delay = el.getAttribute("delay") ?? 0
