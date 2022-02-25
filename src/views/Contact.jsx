@@ -13,7 +13,7 @@ const title = "Contact Me"
 
 const contactList = [
     { icon: "fab fa-linkedin text-2xl", desc: "LinkedIn", url: "https://www.linkedin.com/in/daricvn/" },
-    { icon: "fab fa-facebook text-2xl", desc: "Facebook", url: "https://www.facebook.com/onikaichou" },
+    // { icon: "fab fa-facebook text-2xl", desc: "Facebook", url: "https://www.facebook.com/onikaichou" },
     { icon: "fab fa-twitter text-2xl", desc: "Twitter", url: "https://twitter.com/Onikaichou" },
 ]
 

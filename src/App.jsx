@@ -1,10 +1,11 @@
 import { onMount } from "solid-js";
 import Header from "./components/Header";
-import { StoreProvider, useGlobalState } from "./store";
+import { StoreProvider } from "./store";
 import About from "./views/About";
 import Contact from "./views/Contact";
 import Intro from "./views/Intro";
 import Works from "./views/Works";
+import './App.module.css';
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
   })
   return (
     <StoreProvider>
-      <div class="bg-black w-screen min-h-screen overflow-x-hidden">
+      <div class="bg-black w-screen min-h-screen overflow-x-hidden scroll-snap-container">
         <Header />
         <Intro />
         <About />

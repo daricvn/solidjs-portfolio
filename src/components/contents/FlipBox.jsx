@@ -2,7 +2,7 @@ import anime from "animejs";
 import { createEffect, createSignal, onMount } from "solid-js";
 import { useGlobalState } from "../../store";
 
-const MAX_ROTATE = 10;
+const MAX_ROTATE = 7;
 export default function FlipBox(props){
     const [ state, setState ] = useGlobalState()
     const [ getBreakPoint, setBreakpoint ] = createSignal()
@@ -20,6 +20,8 @@ export default function FlipBox(props){
     })
 
     const handleMouseMoveEffect = (e)=>{
+        if (getAnime())
+            return
         let breakpoint = getBreakPoint()
         let breakpointY = getBreakPointY()
         let currentOffset = e.offsetY
@@ -50,8 +52,8 @@ export default function FlipBox(props){
         let y = getDegY() / MAX_ROTATE;
         setAnime(anime({
             targets: mainRef.firstChild,
-            rotateX: [ 90 * x, 0 ],
-            rotateY: [ 90 * y, 0 ],
+            rotateX: [ MAX_ROTATE * 4 * x, 0 ],
+            rotateY: [ MAX_ROTATE * 4 * y, 0 ],
             duration: 300,
             easing: 'easeInOutSine',
             complete: ()=> setAnime(null)
@@ -63,7 +65,7 @@ export default function FlipBox(props){
         onMouseDown={handleMouseDown}
         onClick={props.onClick}
         style="perspective: 600px;">
-        <div className={`inline-block ${props.className ?? ""} transition-all`} style={!getAnime() && `transform: rotateX(${getDeg()}deg) rotateY(${getDegY()}deg); transform-style: preserve-3d;`}>
+        <div className={`inline-block ${props.className ?? ""} transition-all`} style={!getAnime() ? `transform: rotateX(${getDeg()}deg) rotateY(${getDegY()}deg); transform-style: preserve-3d;` : ''}>
             { props.children }
         </div>
     </div>

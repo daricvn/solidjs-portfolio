@@ -2,25 +2,29 @@ import { createEffect, createSignal } from "solid-js";
 import { useGlobalState } from "../store";
 import { DomUtility } from "../utilities/DomUtility";
 
+const screenThreshold = 0.33;
+
 export default function Section(props){
     const [ state, setState ] = useGlobalState()
     const [ getShow, setShow ] = createSignal()
     var mainRef;
 
     createEffect(()=>{
-        if (!mainRef || props.id == null || state.scrollY < 0 || DomUtility.isScrolling)
+        if (!mainRef || state.scrollY < 0 || DomUtility.isScrolling || state.currentRef == props.id || getShow())
             return
-        const shouldShow = DomUtility.getViewPortRate(mainRef) > 0.52 || state.currentRef == props.id;
-        if (shouldShow != getShow() && props.onChange)
-            props.onChange(mainRef, shouldShow)
-        setShow(shouldShow)
-        if (DomUtility.getViewPortRate(mainRef) > 0.53 && state.currentRef != props.id){
+        const shouldShow = DomUtility.getViewPortRate(mainRef) > screenThreshold;
+        if (shouldShow)
             setState("currentRef", ()=> props.id)
-        }
     })
 
     createEffect(()=>{
-        if (!mainRef || state.currentRef != props.id)
+        var shouldShow = state.currentRef == props.id
+        if (getShow() != shouldShow){
+            setShow(shouldShow)
+            if (props.onChange)
+                props.onChange(mainRef, shouldShow)
+        }
+        if (!mainRef || state.currentRef != props.id || DomUtility.isScrolling)
             return
         DomUtility.scrollTo(mainRef)
     })

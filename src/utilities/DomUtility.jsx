@@ -11,6 +11,7 @@ export const DomUtility = {
     },
     scrollTo: (el)=>{
         let rect = el.getBoundingClientRect()
+        DomUtility.isScrolling = true
         if (!DomUtility.__registeredOnScroll){
             window.addEventListener("scroll",()=>{
                 if (DomUtility.isScrolling && Math.abs(window.scrollY - DomUtility.__scrollToOffset) <= 3){
@@ -21,7 +22,6 @@ export const DomUtility = {
             })
             DomUtility.__registeredOnScroll = true
         }
-        DomUtility.isScrolling = true
         DomUtility.__scrollToOffset = window.scrollY + rect.top
         window.scrollTo({
             top: DomUtility.__scrollToOffset,

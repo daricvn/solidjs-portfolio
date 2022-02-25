@@ -23,7 +23,7 @@ export const StoreProvider = (props)=>{
                 clearTimeout(t)
             t = setTimeout(()=>{
                 setState('scrollY', () => window.scrollY)
-            }, 80)
+            }, 60)
         }
     })
 
